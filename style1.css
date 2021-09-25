@@ -1,0 +1,65 @@
+
+.cont {
+    display:flex;
+}
+
+.left {
+    width: 499px;
+    height: 900px;
+    left: 0px;
+    top: 0px;
+    background-color: #F5F5F5;
+}
+
+.right{
+    padding-top: 9%;
+    flex-grow: 1;
+    margin-left: 20%;
+}
+
+.middle{
+        position: absolute;
+        width: 509px;
+        height: 564px;
+        left: 134px;
+        top: 136px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.11);
+        border-radius: 3px;
+        z-index: 10;
+}
+
+.form-group {
+    margin: 15px;
+    width: 485px;
+    left: 855px;
+}
+
+.form-control{
+     height: 60px;
+}
+
+.btn-block {
+    margin-left: 15px;
+    width: 485px;
+    left: 855px;
+    height: 70px;
+ }
+
+ .cfoot{
+     margin-top: 20px ;
+     margin-left: 190px;
+     text-decoration: underline;
+ }
+
+ #exampleFormControlTextarea1{
+     height: 120px;
+ }
+
+ .inp{
+    background-color: #F5F5F5;
+ }
+
+ .loginp{
+     margin-top: 5%;
+ }
