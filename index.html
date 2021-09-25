@@ -4,11 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice
-        
-    </title>
+    <title>CkEditor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 </head>
 <body>
+    <textarea name="editor1"  cols="30" rows="10"></textarea>
+        <button type="submit" id="submit">Submit</button>
+        <div id="content"></div>
+        <div>
+            <table class="table table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tags</th>
+                    <th scope="col">Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Paragraphs</td>
+                    <td id="paraCnt"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Total Headings</td>
+                    <td id="headingCnt"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>H1 Heading</td>
+                    <td id="h1Cnt"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>H2 Heading</td>
+                    <td id="h2Cnt"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>H3 Heading</td>
+                    <td id="h3Cnt"></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <p></p>
     
+
+<script >
+      CKEDITOR.replace('editor1');
+      
+      document.querySelector( '#submit' ).addEventListener( 'click', () => { 
+        var objEditor1 = CKEDITOR.instances["editor1"];
+        var data = objEditor1.getData();
+            alert(data);
+          
+      var parsed = new DOMParser().parseFromString(data, 'text/html');
+    
+      const paragraphs = parsed.querySelectorAll('p');
+      const emcnt = parsed.querySelectorAll('em');
+      const h1count = parsed.querySelectorAll('h1');
+      const h2count = parsed.querySelectorAll('h2');
+      const h3count = parsed.querySelectorAll('h3');
+      var totalheadings = h1count.length + h2count.length + h3count.length;
+      const hrcnt = parsed.querySelectorAll('hr');
+      
+       console.log(tdcnt.length,trcnt.length);
+      // console.log(h1count[0]);
+                             
+    document.querySelector( '#paraCnt' ).innerHTML = paragraphs.length ;  
+    document.querySelector( '#headingCnt' ).innerHTML =  totalheadings; 
+    document.querySelector( '#h1Cnt' ).innerHTML =  h1count.length; 
+    document.querySelector( '#h2Cnt' ).innerHTML =  h2count.length;
+    document.querySelector( '#h3Cnt' ).innerHTML =  h3count.length;
+    document.querySelector( '#content' ).innerHTML = data;  
+
+    
+ } );
+    
+
+</script>
 </body>
 </html>
