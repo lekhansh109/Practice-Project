@@ -1,0 +1,127 @@
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice
+$ git clone https://github.com/lekhansh109/Practice-Project.git
+Cloning into 'Practice-Project'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 28 (delta 6), reused 19 (delta 2), pack-reused 0
+Unpacking objects: 100% (28/28), 7.57 KiB | 3.00 KiB/s, done.
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice
+$ cd Practice-Project/
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/dev
+  remotes/origin/master
+  remotes/origin/practiceQuestions
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (master)
+$ git checkout practiceQuestions
+Switched to a new branch 'practiceQuestions'
+Branch 'practiceQuestions' set up to track remote branch 'practiceQuestions' from 'origin'.
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ code .
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ mkdir Jay_codes
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ cd Jay_codes/
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
+$ touch app.js index.html main.css
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
+$ cd ..
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git status
+On branch practiceQuestions
+Your branch is up to date with 'origin/practiceQuestions'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Jay_codes/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git add .
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git status
+On branch practiceQuestions
+Your branch is up to date with 'origin/practiceQuestions'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Jay_codes/app.js
+        new file:   Jay_codes/index.html
+        new file:   Jay_codes/main.css
+
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git commit -m "Added required files in Jay_codes folder"
+[practiceQuestions 339a238] Added required files in Jay_codes folder
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Jay_codes/app.js
+ create mode 100644 Jay_codes/index.html
+ create mode 100644 Jay_codes/main.css
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git push origin practiceQuestions
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 369 bytes | 123.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lekhansh109/Practice-Project.git
+   99502f9..339a238  practiceQuestions -> practiceQuestions
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ cd Jay_codes/
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
+$ touch gitcmds.txt
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
+$ cd ..
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git status
+On branch practiceQuestions
+Your branch is up to date with 'origin/practiceQuestions'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Jay_codes/gitcmds.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git add .
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git commit -m "added gitcmds.txt file with git commands for Jay_codes folder setup"
+[practiceQuestions d8597c4] added gitcmds.txt file with git commands for Jay_codes folder setup
+ 1 file changed, 86 insertions(+)
+ create mode 100644 Jay_codes/gitcmds.txt
+
+JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
+$ git push origin practiceQuestions
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.27 KiB | 432.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lekhansh109/Practice-Project.git
+   339a238..d8597c4  practiceQuestions -> practiceQuestions
