@@ -1,0 +1,74 @@
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project (master)
+$ git branch practiceQuestions
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project (master)
+$ git checkout practiceQuestions                                                                                                                                                                                                           
+Switched to branch 'practiceQuestions'
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project (practiceQuestions)
+$ mkdir @Lekhansh_code
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project (practiceQuestions)
+$ cd  @Lekhansh_code                                                                                                                                                                                                                       
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ touch index.html app.js main.css
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git add index.html app.js main.css
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git commit -m "new branch with files added"
+[practiceQuestions 1a25424] new branch with files added
+ 3 files changed, 14 insertions(+)
+ create mode 100644 @Lekhansh_code/app.js
+ create mode 100644 @Lekhansh_code/index.html
+ create mode 100644 @Lekhansh_code/main.css
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git push
+fatal: The current branch practiceQuestions has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin practiceQuestions
+
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ ^C
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git push
+fatal: The current branch practiceQuestions has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin practiceQuestions
+
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ fatal: The current branch practiceQuestions has no upstream branch.
+bash: fatal:: command not found
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ To push the current branch and set the remote as upstream, use
+bash: To: command not found
+
+anmol@LAPTOP-5230B7HL MINGW64 /d/Practice-Project/@Lekhansh_code (practiceQuestions)
+$ git push --set-upstream origin practiceQuestions
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 688 bytes | 344.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'practiceQuestions' on GitHub by visiting:
+remote:      https://github.com/lekhansh109/Practice-Project/pull/new/practiceQuestions
+remote:
+To https://github.com/lekhansh109/Practice-Project.git
+ * [new branch]      practiceQuestions -> practiceQuestions
+Branch 'practiceQuestions' set up to track remote branch 'practiceQuestions' from 'origin'.
