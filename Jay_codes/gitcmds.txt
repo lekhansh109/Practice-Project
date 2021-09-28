@@ -155,3 +155,7 @@ Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 1 local object.
 To https://github.com/lekhansh109/Practice-Project.git
    56ed709..6349d9a  practiceQuestions -> practiceQuestions
+
+
+PS F:\Internship\Eniacoder\practice\Practice-Project> git commit -a -m "Q6 to Q11"
+[practiceQuestions 48a6ae5] Q6 to Q11
