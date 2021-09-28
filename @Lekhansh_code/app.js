@@ -334,3 +334,43 @@ console.log(only14(arr1),only14(arr2));
 
     
     
+//Q21
+// Given an array of ints, return true if it contains no 1's or it contains no 4's.
+function no14(arr) {
+  var two = false;
+  var four = false;
+  for(let i = 0;i <arr.length; i++) {
+    if (arr[i] == 1){
+      two = true;
+     }
+    if(arr[i] == 4){
+      four = true;
+     }
+   }
+
+  if(arr.length == 0 || arr.length == 1)
+  return true;
+  else if (two ==true && four ==true)
+   return false;
+  else if (two || four)
+  return true;
+  else
+  return false; 
+}
+  
+
+
+//Q22
+function isEverywhere(arr,val) {
+  var result = true;
+  for (let i = 0; i <=arr.length-2;i++){
+    if ( arr[i] != val && arr[i+1] != val){
+      result = false;
+    }
+  }
+    return result;
+}
+console.log(isEverywhere([1, 2, 1, 3], 1),isEverywhere([1, 2, 1, 3], 2),isEverywhere([1, 2, 1, 3, 4], 1)); 
+
+
+//Q23
