@@ -125,3 +125,33 @@ Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/lekhansh109/Practice-Project.git
    339a238..d8597c4  practiceQuestions -> practiceQuestions
+
+------------------------------------------------------------------------------------------------------------------------
+Solving Questions:
+
+PS F:\Internship\Eniacoder\practice\Practice-Project> git add .
+[practiceQuestions 84c0fec] Question 1 to 5
+ rewrite Jay_codes/app.js (100%)
+PS F:\Internship\Eniacoder\practice\Practice-Project> git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (4/4), 689 bytes | 2.00 KiB/s, done.
+From https://github.com/lekhansh109/Practice-Project
+   8af33ac..56ed709  practiceQuestions -> origin/practiceQuestions
+Merge made by the 'recursive' strategy.
+ @Lekhansh_code/app.js | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+PS F:\Internship\Eniacoder\practice\Practice-Project> git push
+fatal: unable to access 'https://github.com/lekhansh109/Practice-Project.git/': Failed to connect to github.com port 443: Timed out
+PS F:\Internship\Eniacoder\practice\Practice-Project> git push
+Enumerating objects: 12, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.46 KiB | 213.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/lekhansh109/Practice-Project.git
+   56ed709..6349d9a  practiceQuestions -> practiceQuestions
