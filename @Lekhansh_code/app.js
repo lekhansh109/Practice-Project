@@ -349,15 +349,15 @@ function no14(arr) {
    }
 
   if(arr.length == 0 || arr.length == 1)
-  return true;
+    return true;
   else if (two ==true && four ==true)
-   return false;
+    return false;
   else if (two || four)
-  return true;
+    return true;
   else
-  return false; 
+    return false; 
 }
-  
+console.log(no14([1, 2, 3]),no14([1, 2, 3, 4]),no14([2, 3, 4]));  
 
 
 //Q22
@@ -374,3 +374,37 @@ console.log(isEverywhere([1, 2, 1, 3], 1),isEverywhere([1, 2, 1, 3], 2),isEveryw
 
 
 //Q23
+function either24(arr) {
+  var found2 = false;
+  var found4 = false;
+  for (let i = 0;i < arr.length; i++) {
+    if (arr[i] == 2 && i < arr.length-1 && arr.length > 1 && arr[i+1] == 2)
+      found2 = true;
+    if (arr[i] == 4 && i < arr.length-1 && arr.length > 1 && arr[i+1] == 4)
+      found4 = true;
+  }
+
+  if (found2 && found4) //if both are present
+    return false;
+  else if (!found2 && !found4) //if both are not present
+    return false;
+  else
+    return true;
+}
+console.log(either24([1, 2, 2]),either24([4, 4, 1]),either24([4, 4, 1, 2, 2]));
+
+
+//Q24
+function matchUp(arr1,arr2) {
+  var count =0;
+  for (let i =0; i <arr1.length ;i++){
+    if (Math.abs(arr1[i] - arr2[i]) == 1 || Math.abs(arr1[i] -arr2[i]) == 2 )
+       count++;
+  }    
+    return count;
+
+}
+console.log(matchUp([1, 2, 3], [2, 3, 10]),matchUp([1, 2, 3], [2, 3, 5]),matchUp([1, 2, 3], [2, 3, 3]));  
+
+
+//Q25
