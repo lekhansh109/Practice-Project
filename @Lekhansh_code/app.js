@@ -491,4 +491,234 @@ function haveThree(arr) {
     return false;
 }
 console.log(haveThree([3, 1, 3, 1, 3]),haveThree([3, 1, 3, 3]),haveThree([3, 4, 3, 3, 4]));
+
+
+//Q29
+// Given an array of ints, return true if every 2 that appears in the array is next to another 2.
+function twoTwo(arr) {
+  var index =0;
+  for (let i=0; i<(arr.length); i++){
+    if(arr[i]==2){
+      i++;
+     if(!(i<(arr.length)) || arr[i] !=2){
+       return false;
+     }
+     while(i<arr.length && arr[i] ==2){
+       i++;
+     }
+    }
+  }
+  return true;
+
+}
+console.log(twoTwo([4, 2, 2, 3]),twoTwo([2, 2, 4]),twoTwo([2, 2, 4, 2]));  
   
+
+//Q30
+// Return true if the group of N numbers at the start and end of the array are the same. For example, with {5, 6, 45, 99, 13, 5, 6}, 
+// the ends are the same for n=0 and n=2, and false for n=1 and n=3. You may assume that n is in the range 0..nums.length inclusive.
+function sameEnds(arr,len) {
+  var foo = true;
+  for (let i = 0; i < len; i++) {
+    if (arr[i] == arr[arr.length-len+i]){
+      foo = true;
+    }
+    else{
+      foo = false;
+    }
+  } 
+return foo;
+
+}
+console.log(sameEnds([5, 6, 45, 99, 13, 5, 6], 1),sameEnds([5, 6, 45, 99, 13, 5, 6], 2),sameEnds([5, 6, 45, 99, 13, 5, 6], 3));  
+
+
+//Q31
+// Return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.
+function tripleUp(arr){
+  for(let i=0; i<arr.length-2; i++){
+    if( (arr[i+1]==arr[i]+1) && (arr[i+2]==arr[i]+2)){
+      return true;
+    }
+  }
+  return false;
+}
+console.log(tripleUp([1, 4, 5, 6, 2]),tripleUp([1, 2, 3]),tripleUp([1, 2, 4]));
+
+
+//Q32
+// Given start and end numbers, return a new array containing the sequence of integers from start up to but not including end, so start=5 and end=10 yields {5, 6, 7, 8, 9}.
+//The end number will be greater or equal to the start number. Note that a length-0 array is valid. 
+function fizzArray3(start,end) {
+  var n = end - start;
+  var result = [];
+  
+  for (let i = 0; i < n; i++){
+    result[i] = start++;
+  }
+return result;
+  
+}
+console.log(fizzArray3(5, 10),fizzArray3(11, 18),fizzArray3(1, 3) ); 
+
+
+//Q33
+// Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}. 
+// You may modify and return the given array, or return a new array.
+function shiftLeft(arr) { 
+  var foo = [];
+  if (arr.length == 0)   //if array is empty
+    return foo;
+  
+  for (let i = 0; i < arr.length-1; i++) {  //shifting all elements one by one
+      foo[i] = arr[i+1];
+  }
+  foo[arr.length-1] = arr[0];   //placing first element at last
+return foo;
+
+}
+console.log(shiftLeft([6, 2, 5, 3]),shiftLeft([1, 2]),shiftLeft([1]));
+
+
+//Q34
+// For each multiple of 10 in the given array, change all the values following it to be that multiple of 10, 
+// until encountering another multiple of 10. So {2, 10, 3, 4, 20, 5} yields {2, 10, 10, 10, 20, 20}.
+function tenRun(arr) {
+  for(let i = 0; i < arr.length; i++){
+    if ( arr[i] % 10 == 0){     //to find first multiple of 10
+      for (let j = i +1; j < arr.length && !(arr[j] % 10 == 0) ; j++){ 
+        arr[j] = arr[i];
+      }
+    }
+  }
+return arr;
+
+}
+console.log(tenRun([2, 10, 3, 4, 20, 5]),tenRun([10, 1, 20, 2]),tenRun([10, 1, 9, 20]) ); 
+
+
+//Q35
+// Given a non-empty array of ints, return a new array containing the elements from the original array that 
+// come before the first 4 in the original array. The original array will contain at least one 4.
+function pre4(arr){
+  var finalArr = [];
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] == 4){
+      break;
+    }
+    finalArr[i] = arr[i];
+  }
+  return finalArr;
+}
+console.log(pre4([1, 2, 4, 1]),pre4([3, 1, 4]),pre4([1, 4, 4]) );
+
+
+//Q36
+// We'll say that an element in an array is "alone" if there are values before and after it, and those values are different from it. 
+// Return a version of the given array where every instance of the given value which is alone is replaced by whichever value to its left or right is larger.
+function notAlone(arr,val) {
+  for (let i= 1;i<arr.length -1;i++){
+    if (arr[i] == val){
+      if (arr[i-1] != arr[i] && arr[i+1] != arr[i]){
+        if(arr[i+1] > arr[i-1]){
+          arr[i] = arr[i+1];
+        }
+        else if(arr[i+1] < arr[i-1]){
+          arr[i] = arr[i-1];
+        }
+      }
+    }
+  }
+return arr;
+
+} 
+console.log(notAlone([1, 2, 3], 2),notAlone([1, 2, 3, 2, 5, 2], 2),notAlone([3, 4], 3) );
+
+
+//Q37
+// Return an array that contains the exact same numbers as the given array, but rearranged so that all the zeros are grouped at the start of the array. 
+// The order of the non-zero numbers does not matter. So {1, 0, 0, 1} becomes {0 ,0, 1, 1}. return the array.
+function zeroFront(arr) {
+  var count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == 0) {
+      arr[i] = arr[count];   // swapping of 0 with other taking place
+      arr[count] = 0;
+      count++;
+    }
+  }
+return arr;
+} 
+console.log(zeroFront([1, 0, 0, 1]),zeroFront([0, 1, 1, 0, 1]),zeroFront([1, 0]) );
+
+
+//Q38
+// Return a version of the given array where all the 10's have been removed. The remaining elements should shift 
+// left towards the start of the array as needed, and the empty spaces a the end of the array should be 0.
+// So {1, 10, 10, 2} yields {1, 2, 0, 0}. return array.
+function withoutTen(arr) {
+  var result = [];
+  var j = 0;
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] == 10) { 
+      } 
+    else {                        //Copy all elements in another array without ten
+      result[j] = arr[i];
+      j++;
+    }
+  }
+
+  for(let i = j; i < arr.length; i++) {
+    result[i] = 0;                       // Placing 0 for element 10
+  }
+return result;
+
+}
+console.log(withoutTen([1, 10, 10, 2]),withoutTen([10, 2, 10]),withoutTen([1, 99, 10]) );
+
+
+//Q39
+// Return a version of the given array where each zero value in the array is replaced by the largest odd value to 
+// the right of the zero in the array. If there is no odd value to the right of the zero, leave the zero as a zero.
+function zeroMax(arr){
+  var max = 0;
+  for (var j =0; j < arr.length-1; j++){
+    if (arr[j] == 0){
+      for (let i = j + 1; i <=arr.length -1;i++){
+        if ( arr[i] > max && arr[i] % 2 == 1 ){      // to find next maximum odd no.
+          max = arr[i];
+        } 
+      }
+      arr[j] = max;
+      max = 0;
+    }
+  }
+ return arr;
+}
+console.log(zeroMax([0, 5, 0, 3]),zeroMax([0, 4, 0, 3]),zeroMax([0, 1, 0]) );
+
+
+//Q40
+// Return an array that contains the exact same numbers as the given array, but rearranged so that all the 
+// even numbers come before all the odd numbers.Other than that, the numbers can be in any order.
+function evenOdd(arr) {
+  var evenCount = 0;
+  var oddCount = arr.length-1;
+  var finalarr = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {           //Placing even no. first
+      finalarr[evenCount] = arr[i];
+      evenCount++;
+    }
+    else {
+      finalarr[oddCount] = arr[i];    // Placing odd no. at last
+      oddCount--;
+    }
+  }
+  return finalarr;
+
+}
+console.log(evenOdd([1, 0, 1, 0, 0, 1, 1]),evenOdd([3, 3, 2]),evenOdd([2, 2, 2]) );  
