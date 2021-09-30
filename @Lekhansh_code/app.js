@@ -1,4 +1,6 @@
 // Q1
+//Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+// So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
 function stringMatch(str1,str2){
     var len = Math.min(str1.length, str2.length);
     var count = 0;
@@ -15,6 +17,8 @@ console.log(stringMatch("xxcaazz", "xxbaaz") ,stringMatch("abc", "abc") ,stringM
 
 
 //Q2
+// Given a string, return a version where all the "x" have been removed.
+//  Except an "x" at the very start or end should not be removed.
 function stringX(str){
     var finalStr = "";
     var len = str.length;
@@ -395,6 +399,7 @@ console.log(either24([1, 2, 2]),either24([4, 4, 1]),either24([4, 4, 1, 2, 2]));
 
 
 //Q24
+// Given arrays nums1 and nums2 of the same length, for every element in nums1, consider the corresponding element in nums2 (at the same index). Return the count of the number of times that the two elements differ by 2 or less, but are not equal.
 function matchUp(arr1,arr2) {
   var count =0;
   for (let i =0; i <arr1.length ;i++){
@@ -408,3 +413,82 @@ console.log(matchUp([1, 2, 3], [2, 3, 10]),matchUp([1, 2, 3], [2, 3, 5]),matchUp
 
 
 //Q25
+// Given an array of ints, return true if the array contains
+// two 7's next to each other, or there are two 7's separated by one element, such as with {7, 1, 7}.
+//p=(array is passed)
+function has77(arr) {
+  var result = false;
+  for (let i = 0; i < arr.length-1; i++){
+    if ((arr[i] == 7 && arr[i+1] == 7)){  // 7 and 7 are adjacent
+       result = true;
+     }  
+  }    
+  for (let i = 0; i < arr.length-2; i++){ 
+    if ((arr[i] == 7 && arr[i+2] == 7)){  //both 7 is separated by 1 element  
+      result = true;
+    } 
+  }
+  return result;   
+}
+console.log(has77([1, 7, 7]),has77([1, 7, 1, 7]),has77([1, 7, 1, 1, 7]));
+
+
+//Q26
+//Given an array of ints, return true if there is a 1 in the array with a 2 somewhere later in the array.
+//p=(array)
+function has12(arr) {
+  var foundOne = false;
+  var foundOneTwo = false;
+
+  arr.forEach(element => {
+    if (element == 1){
+      foundOne = true;
+    }
+    if (element == 2 && foundOne){
+      foundOneTwo = true;
+    }
+  });
+  return foundOneTwo;
+
+}
+console.log(has12([1, 3, 2]),has12([3, 1, 2]),has12([3, 1, 4, 5, 2]));
+
+
+//Q27
+// Given an array of ints, return true if the array contains either 3 even or 3 odd values all next to each other.
+function modThree(arr) {
+  var result = false;
+  for (let i = 0;i<arr.length-2;i++)
+    if( (arr[i] % 2 == 0 && arr[i+1] % 2 == 0 && arr[i+2] % 2 == 0)|| (!(arr[i] % 2 == 0) && !(arr[i+1] % 2 == 0) && !(arr[i+2] % 2 == 0))){
+      result = true;
+    }   
+return result;
+
+}
+console.log(modThree([2, 1, 3, 5]),modThree([2, 1, 2, 5]),modThree([2, 4, 2, 5]));
+
+
+//Q28
+// Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no 3's are next to each other.
+function haveThree(arr) {
+  var count = 0;
+  var found = false;
+  
+  arr.forEach(element => {
+    if (element != 3)
+      found = false;
+    if (element == 3 && found == true)
+      return false;
+    if (element == 3 && found == false) {
+      found = true;
+      count++;
+    }
+  });
+  
+  if (count == 3)
+    return true;
+  else
+    return false;
+}
+console.log(haveThree([3, 1, 3, 1, 3]),haveThree([3, 1, 3, 3]),haveThree([3, 4, 3, 3, 4]));
+  
