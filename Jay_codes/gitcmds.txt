@@ -1,161 +1,65 @@
+$ git init <directory>   -> Create empty Git repo in specified directory. 
 
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice
-$ git clone https://github.com/lekhansh109/Practice-Project.git
-Cloning into 'Practice-Project'...
-remote: Enumerating objects: 28, done.
-remote: Counting objects: 100% (28/28), done.
-remote: Compressing objects: 100% (23/23), done.
-remote: Total 28 (delta 6), reused 19 (delta 2), pack-reused 0
-Unpacking objects: 100% (28/28), 7.57 KiB | 3.00 KiB/s, done.
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice
-$ cd Practice-Project/
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (master)
-$ git branch -a
-* master
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/dev
-  remotes/origin/master
-  remotes/origin/practiceQuestions
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (master)
-$ git checkout practiceQuestions
-Switched to a new branch 'practiceQuestions'
-Branch 'practiceQuestions' set up to track remote branch 'practiceQuestions' from 'origin'.
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ code .
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ mkdir Jay_codes
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ cd Jay_codes/
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
-$ touch app.js index.html main.css
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
-$ cd ..
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git status
-On branch practiceQuestions
-Your branch is up to date with 'origin/practiceQuestions'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        Jay_codes/
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git add .
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git status
-On branch practiceQuestions
-Your branch is up to date with 'origin/practiceQuestions'.
-
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   Jay_codes/app.js
-        new file:   Jay_codes/index.html
-        new file:   Jay_codes/main.css
+$ git init  ->  Run with no arguments to initialize the current directory as a git repository.
 
 
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git commit -m "Added required files in Jay_codes folder"
-[practiceQuestions 339a238] Added required files in Jay_codes folder
- 3 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 Jay_codes/app.js
- create mode 100644 Jay_codes/index.html
- create mode 100644 Jay_codes/main.css
 
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git push origin practiceQuestions
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (4/4), 369 bytes | 123.00 KiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/lekhansh109/Practice-Project.git
-   99502f9..339a238  practiceQuestions -> practiceQuestions
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ cd Jay_codes/
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
-$ touch gitcmds.txt
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project/Jay_codes (practiceQuestions)
-$ cd ..
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git status
-On branch practiceQuestions
-Your branch is up to date with 'origin/practiceQuestions'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        Jay_codes/gitcmds.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git add .
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git commit -m "added gitcmds.txt file with git commands for Jay_codes folder setup"
-[practiceQuestions d8597c4] added gitcmds.txt file with git commands for Jay_codes folder setup
- 1 file changed, 86 insertions(+)
- create mode 100644 Jay_codes/gitcmds.txt
-
-JAY SHRIVASTAVA@Galaxy-J6 MINGW64 /f/Internship/Eniacoder/practice/Practice-Project (practiceQuestions)
-$ git push origin practiceQuestions
-Enumerating objects: 6, done.
-Counting objects: 100% (6/6), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 1.27 KiB | 432.00 KiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To https://github.com/lekhansh109/Practice-Project.git
-   339a238..d8597c4  practiceQuestions -> practiceQuestions
-
-------------------------------------------------------------------------------------------------------------------------
-Solving Questions:
-
-PS F:\Internship\Eniacoder\practice\Practice-Project> git add .
-[practiceQuestions 84c0fec] Question 1 to 5
- rewrite Jay_codes/app.js (100%)
-PS F:\Internship\Eniacoder\practice\Practice-Project> git pull
-remote: Enumerating objects: 7, done.
-remote: Counting objects: 100% (7/7), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 4 (delta 2), reused 4 (delta 2), pack-reused 0
-Unpacking objects: 100% (4/4), 689 bytes | 2.00 KiB/s, done.
-From https://github.com/lekhansh109/Practice-Project
-   8af33ac..56ed709  practiceQuestions -> origin/practiceQuestions
-Merge made by the 'recursive' strategy.
- @Lekhansh_code/app.js | 40 ++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
-PS F:\Internship\Eniacoder\practice\Practice-Project> git push
-fatal: unable to access 'https://github.com/lekhansh109/Practice-Project.git/': Failed to connect to github.com port 443: Timed out
-PS F:\Internship\Eniacoder\practice\Practice-Project> git push
-Enumerating objects: 12, done.
-Counting objects: 100% (10/10), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (6/6), 1.46 KiB | 213.00 KiB/s, done.
-Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (2/2), completed with 1 local object.
-To https://github.com/lekhansh109/Practice-Project.git
-   56ed709..6349d9a  practiceQuestions -> practiceQuestions
+$ git clone <repo>  -> Clone repo located at <repo> onto local machine. 
+      e.g: $ git clone https://github.com/lekhansh109/Practice-Project.git
 
 
-PS F:\Internship\Eniacoder\practice\Practice-Project> git commit -a -m "Q6 to Q11"
-[practiceQuestions 48a6ae5] Q6 to Q11
+
+
+$ git config user.name <name>  ->  Define author name to be used for all commits in current repo.
+$ git config --global user.name <name>   -> --global flag is used to set config options for current user.
+
+
+$ git config user.email <email>  ->  Configure user email for the current repo.
+
+
+$ git branch -a  -> List all of the branches in your repo.
+$ git branch <branch>  -> create a new branch with the name <branch>.
+
+
+$ git checkout <branch>   ->  to checkout an existing branch named branch.
+$ git checkout -b <branch>  -> Create and check out a new branch named <branch>.
+
+
+$ git merge <branch>  ->   Merge <branch> into the current branch.
+
+
+$ git status  ->  List which files are staged, unstaged, and untracked.
+
+
+$ git add .   ->  Stage all the changes for the next commit.
+$ git add <file>  ->  Stage the changes in a specific file.
+
+
+$ git commit -m "message"  ->  Commit the staged snapshot with <message> as the commit message.
+
+$ git commit -a -m <message>  -> stage all the changes and commit the staged snapshot with <message> as the commit message.
+
+
+$ git log  ->  Display the entire commit history using the default format.
+$ git log -<limit>  ->  Limit number of commits by <limit>. 
+                        e.g. ”git log -5” will limit to 5 commits.
+
+$ git log -p  ->  Display the full diff of each commit.
+
+
+$ git reset <file>  ->  Remove <file> from the staging area, but leave the working directory unchanged. This unstages a file without overwriting any changes.
+
+$ git revert <commit>  ->  Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch.
+
+
+
+$ git diff  ->  diff of what is changed but not staged.
+$ git diff --staged  ->  diff of what is staged but not yet committed.
+
+$ git diff --cached  ->  Show difference between staged changes and last commit.
+
+
+
+$ git pull  ->  fetch and merge any commits from the tracking remote branch.
+
+$ git push  ->  Transmit local branch commits to the remote repository branch.
