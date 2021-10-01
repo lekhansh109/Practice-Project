@@ -1,14 +1,14 @@
 // Q1
-//Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
-// So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+//params = (2 strings, str1 and str2), return the number of the positions where they contain the same length 2 substring.
+// ex."xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
 function stringMatch(str1,str2){
     var len = Math.min(str1.length, str2.length);
     var count = 0;
   
       for(let i = 0; i < len-1; i++){
-         var s1 = str1.substring(i, i+2);
+         var s1 = str1.substring(i, i+2);   //to get substring of length of 2
          var s2 = str2.substring(i, i+2);
-         if (s1 == s2)
+         if (s1 == s2)                       //to check both substring are equal are not
            count++; 
       }
       return count;
@@ -17,14 +17,14 @@ console.log(stringMatch("xxcaazz", "xxbaaz") ,stringMatch("abc", "abc") ,stringM
 
 
 //Q2
-// Given a string, return a version where all the "x" have been removed.
+// params=(string), return a version where all the "x" have been removed.
 //  Except an "x" at the very start or end should not be removed.
 function stringX(str){
     var finalStr = "";
     var len = str.length;
     for (let i = 0; i < len ; i++){
-        var temp = str.charAt(i);
-        if (!(i > 0 && i < len - 1 && temp == 'x'))
+        var temp = str.charAt(i);                //to get character at position i 
+        if (!(i > 0 && i < len - 1 && temp == 'x'))   //to check char is not x
             finalStr = finalStr + temp;
   }
   
@@ -33,10 +33,11 @@ function stringX(str){
 console.log(  stringX("xxHxix"),stringX("abxxxcd"),stringX("xabxxxcdx") );
 
 //Q3
+//params = (string), return a string made of the chars at indexes 0,1, 4,5, 8,9 ...so "kittens" yields "kien".
 function altPairs(str){
     var finalstr = "";
-    for (let i=0; i<str.length; i= i+4) {
-       var end = i + 2;
+    for (let i=0; i<str.length; i= i+4) {    //to get mutiple of 4
+       var end = i + 2;                     // to hold next index adjacent to multiple of 4
        if (end > str.length) {
         end = str.length;      
         }
@@ -49,11 +50,13 @@ console.log(altPairs("kitten"),altPairs("Chocolate"),altPairs("CodingHorror") );
 
 
 //Q4
+// params=(string), return a string where all the "yak" are removed, but the "a" can be any char. 
+// The "yak" strings will not overlap.
 function stringYak(str) {
       var finalstr = "";
       for (let i=0; i<str.length; i++) {
-        if (i+2<str.length && str.charAt(i)=='y' && str.charAt(i+2)=='k') {
-             i =  i + 2;
+        if (i+2<str.length && str.charAt(i)=='y' && str.charAt(i+2)=='k') {  //to check string has "yak"
+             i =  i + 2;                                     //skip "yak"
             } 
         else {
             finalstr = finalstr + str.charAt(i);
@@ -66,6 +69,8 @@ console.log(stringYak("yakpak"),stringYak("pakyak"),stringYak("yak123ya") );
 
 
 //Q5
+// params=(array), return the number of times that two 6's are next to each other in the array.
+// Also count instances where the second "6" is actually a 7.
 function array667(arr){
     var count=0;
     for (let i = 0 ; i < arr.length-1;i++) {
@@ -82,6 +87,8 @@ var arr2=[6,7,2,6];
 console.log(array667(arr1),array667(arr2));
 
 //Q6
+//params=(array),let triple is a value appearing 3 times in a row in the array.
+// Return true if the array does not contain any triples.
 function noTriples(arr) {
     var count = 0;
     for (let i = 0 ; i < arr.length - 1;i++) {
@@ -99,6 +106,8 @@ console.log(noTriples(arr1),noTriples(arr2));
 
 
 //Q7
+//params=(array), return true if it contains a 2, 7, 1 pattern: a value, followed by the value plus 5,followed
+//by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the correct value.
 function has271(arr) {
     if (arr.length > 2) {
         for (let i = 0; i < arr.length - 2; i++) {
@@ -114,10 +123,11 @@ var arr2=[1,2,8,1];
 console.log(has271(arr1),has271(arr2));
 
 //Q8
+//params=(array),return true if one of the first 4 elements in the array is a 9.Array length may be less than 4.
 function arrayFront9(arr) {
-    var len = arr.length;
+    var len = arr.length;   
     if (len > 4){
-        len = 4;
+        len = 4;        //since we have to check first 4 elements
      }
     for (let i = 0; i < len; i++) {
         if (arr[i] == 9)
@@ -132,6 +142,7 @@ console.log(arrayFront9(arr1),arrayFront9(arr2),arrayFront9(arr3));
 
 
 //Q9
+// params=(array),Return the number of even ints in the given array.
 function countEvens(arr) {
     var evencnt = 0;
     for (let count=0; count < arr.length; count++) {
@@ -148,13 +159,14 @@ console.log(countEvens(arr1),countEvens(arr2),countEvens(arr3));
 
 
 //Q10
+// params=(array), return the difference between the largest and smallest values in the array.
 function bigDiff(arr) {
     var min = arr[0];
     var max = arr[0];
     
     for (let i = 0; i < arr.length; i++){
-        min = Math.min(min,arr[i]);
-        max = Math.max(max,arr[i]);
+        min = Math.min(min,arr[i]);      //Math.min(v1, v2) returns the smaller value of two 
+        max = Math.max(max,arr[i]);      //Math.max(v1, v2) returns the larger value of two
       }
       return max-min;
 }
@@ -165,6 +177,9 @@ console.log(bigDiff(arr1),bigDiff(arr2),bigDiff(arr3));
 
 
 //Q11
+// params=(array),Return the "centered" average of an array , which is the mean average of the values,except
+// ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value, 
+// ignore just one copy, and likewise for the largest value.
 function centeredAverage(arr) {
     var min = arr[0];
     var max = arr[0];
@@ -186,6 +201,8 @@ console.log(centeredAverage(arr1),centeredAverage(arr2));
 
 
 //Q12
+// params = (array),Return the sum of the numbers in the array, returning 0 for an empty array.Except number
+// 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do not count.
 function sum13(arr) {
     var sum =0;
     for (let i = 0;i <arr.length ;i++){
@@ -206,6 +223,8 @@ console.log(sum13(arr1),sum13(arr2));
 
 
 //Q13
+// params=(array),return the sum of the numbers in the array, except ignore sections of numbers starting with
+// 6 and extending to the next 7 (every 6 will be followed by at least one 7). Return 0 for no numbers.
 function sum67(arr) {
       var sum = 0;
       var stop = false;
@@ -228,6 +247,7 @@ console.log(sum67(arr1),sum67(arr2));
 
 
 //Q14
+// params=(array), return true if the array contains a 2 next to a 2 somewhere.
 function has22(arr) {
     var found = false;
     for (let i = 0; i < arr.length-1; i++) {
@@ -244,6 +264,7 @@ console.log(has22(arr1),has22(arr2));
 
 
 //Q15
+// params=(array),return true if the array contains no 1's and no 3's.
 function lucky13(arr) {
     var ans = true;
     for (let i = 0; i < arr.length; i++) {
@@ -260,6 +281,7 @@ console.log(lucky13(arr1),lucky13(arr2));
 
 
 //Q16
+// params = (array), return true if the sum of all the 2's in the array is exactly 8.
 function sum28(arr) {
     var sum = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -278,6 +300,7 @@ console.log(sum28(arr1),sum28(arr2));
 
 
 //Q17
+// params = (array), return true if the number of 1's is greater than the number of 4's
 function more14(arr) {
     var count1 = 0;
     var count4 = 0;
@@ -301,6 +324,8 @@ console.log(more14(arr1),more14(arr2));
 
 
 //Q18
+// params = (number = n), create and return a new array of length n, containing the numbers 0, 1, 2, ... n-1.
+// The given n may be 0, in which case just return a length 0 array.
 function fizzArray(n){
     var ans = [];
     for (let i = 0; i < n; i++){
@@ -310,7 +335,8 @@ function fizzArray(n){
 }
 console.log(fizzArray(4),fizzArray(10));
 
-//Q19   
+//Q19 
+// params = (array), return true if every element is a 1 or a 4.  
 function only14(arr) {
     var ans = true;
     for (let i = 0; i < arr.length; i++) {
@@ -339,7 +365,7 @@ console.log(only14(arr1),only14(arr2));
     
     
 //Q21
-// Given an array of ints, return true if it contains no 1's or it contains no 4's.
+// params = (array), return true if it contains no 1's or it contains no 4's.
 function no14(arr) {
   var two = false;
   var four = false;
@@ -365,6 +391,8 @@ console.log(no14([1, 2, 3]),no14([1, 2, 3, 4]),no14([2, 3, 4]));
 
 
 //Q22
+// We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array,
+// at least one of the pair is that value. Return true if the given value is everywhere in the array
 function isEverywhere(arr,val) {
   var result = true;
   for (let i = 0; i <=arr.length-2;i++){
@@ -378,6 +406,7 @@ console.log(isEverywhere([1, 2, 1, 3], 1),isEverywhere([1, 2, 1, 3], 2),isEveryw
 
 
 //Q23
+// params=(array), return true if the array contains a 2 next to a 2 or a 4 next to a 4, but not both.
 function either24(arr) {
   var found2 = false;
   var found4 = false;
@@ -399,7 +428,8 @@ console.log(either24([1, 2, 2]),either24([4, 4, 1]),either24([4, 4, 1, 2, 2]));
 
 
 //Q24
-// Given arrays nums1 and nums2 of the same length, for every element in nums1, consider the corresponding element in nums2 (at the same index). Return the count of the number of times that the two elements differ by 2 or less, but are not equal.
+// params=(arrays arr1 and arr2 of the same length), for every element in arr1, consider the corresponding 
+// element in arr2 (at the same index). Return the count of the number of times that the two elements differ by 2 or less, but are not equal.
 function matchUp(arr1,arr2) {
   var count =0;
   for (let i =0; i <arr1.length ;i++){
@@ -494,7 +524,7 @@ console.log(haveThree([3, 1, 3, 1, 3]),haveThree([3, 1, 3, 3]),haveThree([3, 4, 
 
 
 //Q29
-// Given an array of ints, return true if every 2 that appears in the array is next to another 2.
+// params = (array), return true if every 2 that appears in the array is next to another 2.
 function twoTwo(arr) {
   var index =0;
   for (let i=0; i<(arr.length); i++){
@@ -701,8 +731,8 @@ console.log(zeroMax([0, 5, 0, 3]),zeroMax([0, 4, 0, 3]),zeroMax([0, 1, 0]) );
 
 
 //Q40
-// Return an array that contains the exact same numbers as the given array, but rearranged so that all the 
-// even numbers come before all the odd numbers.Other than that, the numbers can be in any order.
+// params =(array),Return an array that contains the exact same numbers as the given array, but rearranged so  
+// that all even numbers come before all the odd numbers.Other than that, the numbers can be in any order.
 function evenOdd(arr) {
   var evenCount = 0;
   var oddCount = arr.length-1;

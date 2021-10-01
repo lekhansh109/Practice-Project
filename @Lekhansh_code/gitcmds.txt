@@ -1,5 +1,7 @@
 $git init  ->to initialize the current directory as a git repository.
 
+$ git clone <repo>  -> Clone repo located at <repo> onto local machine.
+
 $ git config user.name <name>  ->  Define author name to be used for all commits in current repo.
 
 $ git config --global user.name <name>   -> --global flag is used to set config options for current user.
