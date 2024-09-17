@@ -1,0 +1,34 @@
+$git init  ->to initialize the current directory as a git repository.
+
+$ git clone <repo>  -> Clone repo located at <repo> onto local machine.
+
+$ git config user.name <name>  ->  Define author name to be used for all commits in current repo.
+
+$ git config --global user.name <name>   -> --global flag is used to set config options for current user.
+
+$ git config user.email <email>  ->  Configure user email for the current repo.
+
+$git add <filename> ->Stage all changes in <file> for the next commit. 
+
+$git add . -> Stage all changes in <directory> for the next commit. 
+
+$git commit -m "meassage"  -> commit the staged files with meassage
+
+$git status  ->List which files are staged, unstaged, and untracked.
+
+$git log   ->Display the entire commit history. 
+
+$git branch -a -> List all of the branches in your repo.
+
+$git branch <branch>  -> create a new branch with the name <branch>.
+
+$git checkout -b <branch>  ->Create and check out a new branch named <branch>.
+
+$git merge <branch>  ->Merge <branch> into the current branch
+
+$git pull <remote>   -> Fetch the specified remote’s copy of current branch and immediately 
+                        merge it into the local copy.
+
+$git push <remote>  -> Push the branch to <remote>, along with necessary commits and objects. 
+
+$
